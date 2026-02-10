@@ -1,0 +1,47 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    background-color: #f8f8f8;
+    color: #666666
+    line-height: 130%;
+}
+table {
+    border-spacing: 0px;
+    border-right-width: 2px;
+}
+#kaar {
+    border-top-right-radius: 5px;
+}
+.one {
+    background-color: rgb(122, 133, 255);
+    color: rgb(255, 255, 255);
+    border: 1px solid blue;
+    border-left: none;
+    border-top: none;
+    border-bottom-width: 3px;
+    padding: 4px;
+}
+#esimene {
+    background-color: rgb(240, 240, 240);
+}
+#teine {
+    background-color: rgb(202, 228, 237);
+}
+tr {
+    text-align: left;
+}
+th {
+    border: 1px solid grey;
+    border-bottom: none;
+    border-top: none;
+    border-left: none
+}
+td {
+    border: 1px solid grey;
+    border-bottom: none;
+    border-top: none;
+    border-left: none
+}
+ul {
+    list-style-image: url(../images/icon-plus.png);
+}
