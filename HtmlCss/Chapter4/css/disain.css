@@ -2,26 +2,6 @@ body {
   min-width: 960px;
 }
 
-.header {
-    background-image: url("../images/bg-header.jpg");
-    height: 140px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.wrapper {
-    background-image:url("../images/bg-triangle.png"), url("../images/bg.jpg");
-    height: 800px;
-    background-size: cover, cover;
-    background-position: -200px -100px, center;
-    background-repeat: no-repeat, no-repeat;
-}
-.triangle {
-    position: relative;
-    top: 40px;
-    right: 10px;
-}
 
 /* `Containers
 ----------------------------------------------------------------------------------------------------*/
