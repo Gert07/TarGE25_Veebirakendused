@@ -1,0 +1,41 @@
+section.courses {
+    float: left;
+    width: 900px;
+    border-right: 1px solid #eeeeee;
+    margin: 20px 0px 20px 20px;
+}
+.recipes {
+    width: 870px;
+}
+figure {
+    float: left;
+    width: 290px;
+    height: 650px;
+    padding: 5px;
+    margin: 0px;
+}
+hgroup {
+    margin-top: 950px;
+}
+hgroup h2 {
+    color: #de6581;
+    padding-left: 10px;
+}
+figcaption {
+    font-size: 90%;
+    text-align: left;
+    padding: 0px 0px 0px 5px;
+}
+p {
+    padding-left: 10px;
+}
+.i001 {
+    color: #de6581;
+    margin-left: 5px;
+}
+ul {
+    color: ;
+}
+article section h3 {
+    margin: 10px 0px 0px 5px;
+}
