@@ -10,8 +10,8 @@
 <body>
     <nav class="navbar | navbar-dark | navbar-expand-lg | bg-dark">
         <div class="container">
-            <a class="cotnainer" | href="#">
-                <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-dark.jpg" | alt="" | width="50" | height="50">
+            <a class="navbar-brand" | href="#">
+                <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-dark.jpg" | alt="" | width="50" | height="50">Navbar
             </a>
             <button class="navbar-toggler" | type="button" | data-bs-toggle="collapse" | data-bs-target="#navbarSupportContent" | aria-controls="navbarSupportContent" | 
             aria-expanded="false" | aria-label="Toggle navigation">
@@ -57,6 +57,53 @@
                 </button>
             </div>
         </nav>
+    </div>
+    <div class="container my-5">
+        <h2>Base nav</h2>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link | active" | aria-current="page" | href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" | aria-current="page" | href="#">Link1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" | aria-current="page" | href="#">Link2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link | disabled" | tabindex="-1" | aria-dropeffect="True" | aria-current="page" | href="#">Link3</a>
+            </li>
+        </ul>
+        <h2 class="my-5">Tabs</h2>
+        <ul class="nav | nav-pills | mb-3" | id="pills-tab" | role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link | active" | id="pills-home-tab" | data-bs-toggle="pill" | data-bs-target="#pills-home"
+                | type="button" | role="tab" | aria-controls="pills-home" | aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" | id="pills-profile-tab" | data-bs-toggle="pill" | data-bs-target="#pills-profile"
+                | type="button" | role="tab" | aria-controls="pills-profile" | aria-selected="False">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" | id="pills-contact-tab" | data-bs-toggle="pill" | data-bs-target="#pills-contact"
+                | type="button" | role="tab" | aria-controls="pills-contact" | aria-selected="true">Contact</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" | id="pills-other-tab" | data-bs-toggle="pill" | data-bs-target="#pills-other"
+                | type="button" | role="tab" | aria-controls="pills-other" | aria-selected="true">Other</button>
+            </li>
+        </ul>
+        <div class="tab-content" | id="pills-tabContact">
+            <div class="active | fade | show | tab-pane" | id="pills-home" | role="tabpanel" | aria-labelledby="pills-home-tab">Home tab</div>
+            <div class="fade | tab-pane" | id="pills-profile" | role="tabpanel" | aria-labelledby="pills-profile-tab">Profile tab
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, eius recusandae itaque magnam quidem praesentium nobis veritatis non culpa necessitatibus laborum adipisci doloribus ipsa? Distinctio provident rem quas ipsa repellendus?
+                </p>
+            </div>
+            <div class="fade | tab-pane" | id="pills-contact" | role="tabpanel" | aria-labelledby="pills-contact-tab">Contact tab</div>
+            <div class="fade | tab-pane" | id="pills-other" | role="tabpanel" | aria-labelledby="pills-other-tab">Other tab</div>
+        </div>
+
     </div>
 </body>
 </html>
