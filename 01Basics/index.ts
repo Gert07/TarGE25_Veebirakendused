@@ -16,10 +16,15 @@ function renderUserdetails(user: User) {
     console.log(user.name, user.age)
 }
 
+function renderUserdetails1(user: Pick<User, "name" | "age">){
+    console.log(user.name, user.age)
+}
+
+
 const user: User = {
     id: "ads",
     name: "Kyle",
-    age: 65657,
+    age: 47,
     address: {
         street: "string",
         city: "London"
@@ -27,3 +32,4 @@ const user: User = {
 }
 
 renderUserdetails(user)
+renderUserdetails1({name: "Nipitiri", age: 123})

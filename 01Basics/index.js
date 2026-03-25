@@ -3,13 +3,17 @@
 function renderUserdetails(user) {
     console.log(user.name, user.age);
 }
+function renderUserdetails1(user) {
+    console.log(user.name, user.age);
+}
 var user = {
     id: "ads",
     name: "Kyle",
-    age: 65657,
+    age: 47,
     address: {
         street: "string",
         city: "London"
     }
 };
 renderUserdetails(user);
+renderUserdetails1({ name: "Nipitiri", age: 123 });
