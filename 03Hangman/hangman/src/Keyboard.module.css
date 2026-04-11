@@ -10,10 +10,12 @@
     cursor: pointer;
     color: black;
 }
+
 .btn.active {
     background-color: hsl(200, 100%, 50%);
     color: white;
 }
+
 .btn.inactive {
     opacity: .3;
 }
