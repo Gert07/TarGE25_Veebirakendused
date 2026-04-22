@@ -1,9 +1,14 @@
-CREATE DATABASE ReactData;
+-- Create the database if you haven't yet
+CREATE DATABASE ItemDB;
 GO
 
-USE ReactData
+USE ItemDB;
+GO
 
+-- Create the Items table
 CREATE TABLE Items (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    name NVARCHAR(255) NOT NULL
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE()
 );
