@@ -2,11 +2,14 @@
 
 namespace ReactApp1.Server.Controllers
 {
-    public class PlanetsController : Controller
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class PlanetsController : ControllerBase
     {
-        public IActionResult Index()
+        public IActionResult SchoolIndex()
         {
-            return View();
+            return Ok();
         }
     }
 }
