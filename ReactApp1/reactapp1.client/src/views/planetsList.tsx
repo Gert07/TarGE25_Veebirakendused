@@ -1,14 +1,22 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Planets } from "../Types/types";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function PlanetsList() {
     const [planets, setPlanets] = useState<Planets[]>([]);
-    //const navigate = useNavigate();
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState<string | null>(null)
+    const navigate = useNavigate()
 
+    const openCreate = () => {
+        navigate("/planets/create")
+    };
     //Loob ühenduse controlleriga ja toob kõik planeedid
     const fetchPlanets = useCallback(async () => {
         try {
+            setLoading(true)
+            setError(null)
+
             const response = await fetch("/api/planets");
             if (response.ok) {
                 const data = await response.json();
@@ -26,15 +34,25 @@ function PlanetsList() {
     }, [fetchPlanets]);
 
     return (
-        <div className='container'>
-            <h1>Planet list</h1>
-            <table>
+        <div className='page-card'>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <h1 style={{ margin: 0 }}>Planets list</h1>
+                <button type="button" className="success" onClick={openCreate}>
+                    + Create
+                </button>
+            </div>
+
+            {!loading && !error && (
+                <table border={1} cellPadding={8} style={{ width: "100%", borderCollapse: "collapse", marginTop: 16}}>
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
+                        <th>Description</th>
                         <th>Types</th>
-                    </tr>
+                        <th>Mass</th>
+                        <th style={{ width: 220 }}>Actions</th>
+                    </tr>   
                 </thead>
                 <tbody>
                     {planets.length > 0 ? (
@@ -42,7 +60,9 @@ function PlanetsList() {
                             <tr key={planet.planetsId}>
                                 <td>{planet.planetsId}</td>
                                 <td>{planet.name}</td>
+                                <td>{planet.description}</td>
                                 <td>{planet.type}</td>
+                                <td>{planet.mass}</td>
                                 <td>
                                     Siia teha nupp detaili vaatesse, mis suunab detailvaatesse ja näitab planeedi kõiki andmeid
                                 </td>
@@ -55,6 +75,7 @@ function PlanetsList() {
                     )}
                 </tbody>
             </table>
+            )}
         </div>
   );
 }
