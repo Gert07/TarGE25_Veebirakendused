@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Planets } from "../Types/types";
 import { useNavigate } from "react-router-dom";
 
@@ -12,26 +12,26 @@ function PlanetsList() {
         navigate("/planets/create")
     };
     //Loob ühenduse controlleriga ja toob kõik planeedid
-    const fetchPlanets = useCallback(async () => {
-        try {
-            setLoading(true)
-            setError(null)
+    useEffect(() => { 
+        const fetchPlanets = async () => {
+            try {
+                setLoading(true)
+                setError(null)
 
-            const response = await fetch("/api/planets");
-            if (response.ok) {
-                const data = await response.json();
-                setPlanets(data);
+                const response = await fetch("/api/planets");
+                if (response.ok) {
+                    const data = await response.json();
+                    setPlanets(data);
+                }
+            } catch (error) {
+                console.error("Error fetching planets:", error);
+                setError(error.message || "Failed to fetch planets")
+            } finally {
+                setLoading(false)
             }
-        } catch (error) {
-            console.error("Error fetching planets:", error);
         }
+        fetchPlanets()
     }, []);
-
-    useEffect(() => {
-        (async () => {
-            await fetchPlanets();
-        })();
-    }, [fetchPlanets]);
 
     return (
         <div className='page-card'>

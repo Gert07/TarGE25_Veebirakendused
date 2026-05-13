@@ -67,7 +67,7 @@ export default function PlanetsCreate() {
       <div className="page-card">
           <h1>Create Planets</h1>
 
-          {error && <p style={{ color: "crimson" }}></p>}
+          {error && <p style={{ color: "crimson" }}>{error}</p>}
 
           <form onSubmit={onSubmit} style={{ display: "grid", gap: 12, maxWidth: 520 }}>
               <div>

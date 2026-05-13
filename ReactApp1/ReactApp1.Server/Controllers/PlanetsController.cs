@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReactApp1.Server.Data;
+using ReactApp1.Server.Domain;
 using ReactApp1.Server.ViewModel;
 
 namespace ReactApp1.Server.Controllers
@@ -16,6 +17,7 @@ namespace ReactApp1.Server.Controllers
             _planetContext = planetContext;
         }
 
+        [HttpGet]
         public IActionResult SchoolIndex()
         {
             var result = _planetContext.Planets.Select(x => new PlanetsListViewModel
@@ -28,6 +30,36 @@ namespace ReactApp1.Server.Controllers
             });
 
             return Ok(result);
+        }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] PlanetsCreateViewModel model)
+        {
+            if (string.IsNullOrWhiteSpace(model.Name))
+            {
+                return BadRequest("Name is required");
+            }
+
+            var planet = new Planets
+            {
+                PlanetsId = Guid.NewGuid(),
+                Name = model.Name,
+                Description = model.Description,
+                Type = model.Type,
+                Mass = model.Mass
+            };
+
+            _planetContext.Planets.Add(planet);
+            _planetContext.SaveChanges();
+
+            return Ok(new
+            {
+                planetsId = planet.PlanetsId,
+                name = planet.Name,
+                description = planet.Description,
+                type = planet.Type,
+                mass = planet.Mass
+            });
         }
     }
 }
